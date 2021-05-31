@@ -54,7 +54,6 @@ class Pn532Spi(Pn532Interface):
     def begin(self):
         self._spi.open(RPI_BUS0, self._ss)
         self._spi.mode = SPI_MODE0  # PN532 only supports mode0
-        self._spi.cshigh = False  # Active low
         self._spi.max_speed_hz = 5000000 # 5 MHz
 
     def wakeup(self) -> None:
